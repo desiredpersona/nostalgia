@@ -1,0 +1,16 @@
+---
+layout: page
+title: Tags
+description: My website tags
+permalink: /tags/
+---
+
+<ul class="t">
+  {% for tag in collections.tagList %}
+    <li>
+      <a href="{{ tag | slug }}">{{ tag }}</a>
+    </li>
+  {% endfor %}
+</ul>
+
+

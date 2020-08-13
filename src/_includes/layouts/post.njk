@@ -1,0 +1,24 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <article>
+    <header>
+      <span class="pm">
+        {% include "partials/postMeta.njk" %}
+        {% include "partials/readingTime.njk" %}
+      </span>
+      <h1 class="pt">{{ title }}</h1>
+    </header>
+
+    {{ content | safe }}
+
+    <ul class="t">
+      {% for tag in tags %}
+        <li>
+          <a href="/tags/{{ tag | slug }}/" rel="tag">{{ tag }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+
+  </article>
+{% endblock %}

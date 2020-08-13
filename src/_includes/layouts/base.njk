@@ -1,0 +1,97 @@
+{% set absoluteUrl %}{{ page.url | url | absoluteUrl(site.url) }}{% endset %}
+
+<!doctype html>
+<html lang="{{ site.metaLang | default("en") }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Meta robots -->
+  {% if env.environment == "development" %}
+    <!-- Disallow search engines in development -->
+    <meta name="robots" content="noindex, nofollow">
+  {% elif env.environment == "production" %}
+    <!-- Allow search engines in production -->
+    {% if metaRobots %}
+      <meta name="robots" content="{{ metaRobots }}">
+    {% else %}
+      <meta name="robots" content="{{ site.metaRobots }}">
+    {% endif %}
+  {% endif %}
+
+  <title>{% if title %}{{ title }} &ndash; {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ description }}">
+  
+  <!-- Open Graph protocol -->
+  {% if layout == "post" %}
+    <meta property="og:type" content="blog">
+  {% else %}
+    <meta property="og:type" content="website">
+  {% endif %}
+  <meta property="og:url" content="{{ canonicalUrl or absoluteUrl }}">
+  <meta property="og:title" content="{% if title %}{{ title }} &ndash; {% endif %}{{ site.title }}">
+  <meta property="og:description" content="{{ description }}">
+  <meta property="og:site_name" itemprop="name" content="{{ site.title }}">
+  <meta property="og:locale" content="{{ site.metaLocale }}">
+  <meta property="og:image" content="{{ image }}">
+  {% if imageAlt %}
+    <meta property="og:image:alt" content="{{ imageAlt }}">
+  {% endif %}
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+  {% if site.author.twitterSite %}
+    <meta name="twitter:site" content="{{ site.author.twitterSite }}">
+  {% endif %}
+  <meta name="twitter:creator" content="{{ site.author.twitterCreator }}">
+  <meta name="twitter:title" content="{% if title %}{{ title }} &ndash; {% endif %}{{ site.title }}">
+  <meta name="twitter:description" content="{{ description }}">
+  {% if image %}
+    <meta name="twitter:image" content="{{ image }}">
+  {% endif %}
+  {% if imageAlt %}
+    <meta name="twitter:image:alt" content="{{ imageAlt }}">
+  {% endif %}
+
+  <!-- Canonical url -->
+  <link rel="canonical" href="{{ canonicalUrl or absoluteUrl }}"/>
+
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+
+  {% if site.googleAnalytics and env.environment == "production" %}
+    <link rel="preconnect" href="//www.google-analytics.com">
+    <link rel="preconnect" href="//instant.page.com">
+  {% endif %}
+
+  <!-- CSS stylesheet -->
+  {% set css %}
+    {% include "css/nostalgia.css" %}
+  {% endset %}
+  <style>{{ css | cssMin | safe }}</style>
+
+  <!-- Feed -->
+  <link rel="alternate" href="{{ site.feed.path | url }}" title="{{ site.title }}" type="application/atom+xml">
+
+  {% if site.googleAnalytics and env.environment == "production" %}
+    <!-- Global site tag(gtag.js)-Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.googleAnalytics }}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
+    gtag('js',new Date());gtag('config','{{ site.googleAnalytics }}');</script>
+  {% endif %}
+</head>
+<body>
+  {% include "partials/header.njk" %}
+
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+
+  {% include "partials/footer.njk" %}
+
+  <script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</body>
+</html>

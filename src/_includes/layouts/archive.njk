@@ -1,0 +1,16 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+  {%- if title -%}
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+  {%- endif -%}
+
+  {{ content | safe }}
+
+  {% set postList = collections.posts %}
+  {% include "partials/postList.njk" %}
+
+{% endblock %}

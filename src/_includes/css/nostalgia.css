@@ -1,0 +1,355 @@
+:root {
+  --base-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --code-font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --base-font-size: 1.125rem;
+  --small-font-size: 1rem;
+  --code-font-size: 0.8em;
+  --base-font-weight: 400;
+  --base-line-height: 1.618;
+  --content-width: 60ch;
+  --text-color: #1d1d1f;
+  --background-color: #fff;
+  --code-color: #1d1d1f;
+  --code-background-color: #f2f2f2;
+  --link-color: #1d1d1f;
+  --link-hover-color: #1e90ff;
+  --tag-color: #1d1d1f;
+  --tag-background-color: #f2f2f2;
+  --post-meta-color: #1d1d1f;
+  --border-color: #f2f2f2;
+  --highlight-color: yellow;
+  --nav-color: #1d1d1f;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body {
+  font: var(--base-font-weight) var(--base-font-size) / var(--base-line-height) var(--base-font-family);
+  color: var(--text-color);
+  background: var(--background-color);
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:
+    "h"
+    "m"
+    "f";
+  gap: 2rem 0;
+
+  padding: 1rem;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+}
+
+header {
+  grid-area: "h";
+}
+main {
+  grid-area: "m";
+}
+
+nav ul {
+  display: flex;
+  white-space: nowrap;
+  overflow-x: auto;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 0.5rem 0;
+}
+
+nav a {
+  color: var(--nav-color);
+  text-decoration: none;
+}
+
+nav * + * {
+  margin-left: 1.5rem;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+p + p {
+  margin-top: 1em;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 2.5rem 0 1rem;
+}
+
+a {
+  color: var(--link-color);
+}
+
+a:hover {
+  color: var(--link-hover-color);
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Images */
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+/* Blur images when they have no alt attribute */
+img:not([alt]) {
+  filter: blur(10px);
+}
+
+code {
+  color: var(--code-color);
+  background-color: var(--code-background-color);
+  border-radius: 2px;
+  font-family: var(--code-font-family);
+  font-size: var(--code-font-size);
+  padding: 0.25rem;
+}
+
+pre > code {
+  display: block;
+  overflow: auto;
+  padding: 1rem;
+}
+
+kbd {
+  border: 1.5px solid var(--text-color);
+  border-radius: 4px;
+  color: var(--text-color);
+  padding: 0.25rem;
+}
+
+blockquote {
+  border-left: 3px solid var(--text-color);
+  font-size: 120%;
+  font-style: italic;
+  margin: 2rem 0;
+  padding: 0 1rem;
+}
+
+blockquote > footer {
+  border: 0;
+  font-style: normal;
+  margin-top: 1rem;
+}
+
+blockquote cite {
+  font-style: normal;
+}
+
+hr {
+  background: var(--border-color);
+  border: 0;
+  height: 1px;
+  margin: 2rem 0;
+}
+
+del {
+  background-color: #ffeef0;
+}
+
+ins {
+  background-color: #e6ffed;
+}
+
+mark {
+  background-color: var(--highlight-color);
+}
+
+del,
+ins,
+mark {
+  color: #1d1d1f;
+  padding: 2px;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 2rem 0;
+  text-align: left;
+  width: 100%;
+}
+
+tr {
+  border-bottom: 1px solid var(--border-color);
+}
+
+th,
+td {
+  padding: 0.5rem;
+}
+
+footer {
+  grid-area: "f";
+  align-self: end;
+  margin: 1em 0;
+}
+
+/*
+
+  CSS classes
+
+*/
+
+/* MarkdownItAnchor links */
+.al {
+  color: var(--background-color);
+}
+
+/* Post title */
+.pt {
+  font-size: 2em;
+  line-height: 1.25;
+  margin-top: 0.5rem;
+}
+
+/* Post meta */
+.pm {
+  color: var(--post-meta-color);
+  font-size: var(--small-font-size);
+  margin: 0;
+}
+
+/* Post list */
+.pl ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Post list title */
+.plt {
+  margin: 0;
+}
+
+/* Post list excerpt */
+.ple {
+  margin: 0.5rem 0;
+}
+
+/* Post list external site links */
+.ext:after {
+  content: "↗";
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+/* Post pagination */
+.pp {
+  margin: 1em 0;
+}
+
+.pp * + * {
+  margin: 2.5rem;
+}
+
+/* Footnotes */
+.fn {
+  font-size: var(--small-font-size);
+}
+
+/* Post tags */
+.t {
+  display: inline-block;
+  padding-left: 0;
+}
+
+.t li {
+  background-color: var(--tag-background-color);
+  border-radius: 1.5em;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  margin: 1rem 1rem 1rem 0;
+}
+
+.t a {
+  color: var(--tag-color);
+  font-size: var(--small-font-size);
+  text-decoration: none;
+}
+
+/*
+
+  Media queries
+
+*/
+
+@media (min-width: 680px) {
+  body {
+    grid-template-columns: auto var(--content-width) auto;
+    grid-template-areas:
+      ". h ."
+      ". m ."
+      ". f .";
+  }
+
+  header {
+    grid-column: 2/3;
+  }
+
+  main {
+    grid-column: 2/3;
+  }
+
+  footer {
+    grid-column: 2/3;
+  }
+}

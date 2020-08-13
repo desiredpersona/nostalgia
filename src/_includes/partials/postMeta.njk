@@ -1,0 +1,6 @@
+{% if lastModified %}
+  <span>{{ site.text.updated }} <time datetime="{{ lastModified | dateTime }}">{{ lastModified | ordinalDate }}</time></span>
+{% else %}
+  <time datetime="{{ date | dateTime }}">{{ date | ordinalDate }}</time>
+{% endif %}
+

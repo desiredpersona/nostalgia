@@ -1,0 +1,28 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+
+  {%- if title -%}
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+  {%- endif -%}
+
+  {{ content | safe }}
+
+  <h3>Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</h3>
+
+  {% set postList = posts %}
+  {% include "partials/postList.njk" %}
+
+  <div class="pp">
+    {%- if pagination.href.previous -%}
+      <a href="{{pagination.href.previous}}">{{ site.text.previous }}</a>
+    {%- endif -%}
+
+    {%- if pagination.href.next -%}
+      <a href="{{pagination.href.next}}">{{ site.text.next }}</a>
+    {%- endif -%}
+  </div>
+
+{% endblock %}

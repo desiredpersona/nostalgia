@@ -1,0 +1,5 @@
+{% if site.post.readingTime %}
+  <span>
+    &middot; {{ content | safe | readingTime }} {{ site.text.readingTime | lower }}
+  </span>
+{% endif %}

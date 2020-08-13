@@ -1,0 +1,6 @@
+drafts/
+node_modules/
+dist/
+package-lock.json
+README.md
+.DS_Store
