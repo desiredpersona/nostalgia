@@ -17,7 +17,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
     "@11ty/eleventy-navigation": "^0.1.6",
-    "@11ty/eleventy-plugin-rss": "^1.0.7",
+    "@11ty/eleventy-plugin-rss": "^1.0.9",
     "clean-css": "^4.2.3",
     "html-minifier": "^4.0.0",
     "markdown-it": "^10.0.0",
