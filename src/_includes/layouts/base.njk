@@ -7,10 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Meta robots -->
-  {% if env.environment == "development" %}
+  {% if site.environment == "development" %}
     <!-- Disallow search engines in development -->
     <meta name="robots" content="noindex, nofollow">
-  {% elif env.environment == "production" %}
+  {% elif site.environment == "production" %}
     <!-- Allow search engines in production -->
     {% if metaRobots %}
       <meta name="robots" content="{{ metaRobots }}">
@@ -62,7 +62,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
 
-  {% if site.googleAnalytics and env.environment == "production" %}
+  {% if site.googleAnalytics and site.environment == "production" %}
     <link rel="preconnect" href="//www.google-analytics.com">
     <link rel="preconnect" href="//instant.page.com">
   {% endif %}
@@ -76,7 +76,7 @@
   <!-- Feed -->
   <link rel="alternate" href="{{ site.feed.path | url }}" title="{{ site.title }}" type="application/atom+xml">
 
-  {% if site.googleAnalytics and env.environment == "production" %}
+  {% if site.googleAnalytics and site.environment == "production" %}
     <!-- Global site tag(gtag.js)-Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.googleAnalytics }}"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}
     gtag('js',new Date());gtag('config','{{ site.googleAnalytics }}');</script>

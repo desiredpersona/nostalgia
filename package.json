@@ -1,6 +1,6 @@
 {
   "name": "nostalgia",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A minimal Eleventy starter created from first principles thinking",
   "scripts": {
     "build": "ELEVENTY_ENV=production npx @11ty/eleventy",

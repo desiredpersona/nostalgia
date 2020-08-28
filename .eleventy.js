@@ -16,7 +16,7 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 */
 
 // Import global data file
-const site = require("./src/_data/site.json");
+const site = require("./src/_data/site.js");
 
 module.exports = function (config) {
   // https://www.11ty.dev/docs/data-deep-merge/
