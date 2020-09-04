@@ -9,15 +9,15 @@ A minimal Eleventy starter created from first principles thinking.
 
   Options:
 
-  - `excerpts: true` Show excerpts in blog post list.
-  - `postDates: true` Show blog post dates in post list.
+  - `excerpts: true` Show excerpts in postList.
+  - `dates: true` Show dates in postList.
 
 - post.njk - Blog post layout
 - page.njk - Page layout
 
 ## Features
 
-- Stylesheet > 2KB
+- Stylesheet < 2KB
 - Author support
   - Set default author in `posts/posts.json` and `pages/pages.json`.
   - Overwrite default author in any post or page by setting `author:` in front matter.
@@ -31,11 +31,11 @@ A minimal Eleventy starter created from first principles thinking.
   - `DuplicatePermalinkOutputError` Error thrown when you have duplicate tags. For example "Eleventy Themes" and "eleventy themes" tags would both create `/eleventy-themes/` urls.
 - Atom feed
 - Sitemap
-  - `excludeFromSitemap: true` Exclude external pages from your Sitemap.
+  - `excludeFromSitemap: true` Exclude external pages from your sitemap.
 - 404 page
 - `metaRobots:` Overwrite meta robots tag in front matter.
-  - `ELEVENTY_ENV=development` is set to `noindex, nofollow` by default.
-  - `ELEVENTY_ENV=production` is set to `index, follow` by default.
+  - `ELEVENTY_ENV=development` is set to `noindex, nofollow`.
+  - `ELEVENTY_ENV=production` is set to `index, follow`.
 
 ## Licence
 
