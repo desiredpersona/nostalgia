@@ -19,7 +19,7 @@ A minimal Eleventy starter created from first principles thinking.
 
 - Stylesheet < 2KB
 - Author support
-  - Set default author in `posts/posts.json` and `pages/pages.json`.
+  - Set default author globally in `_data/site.js`.
   - Overwrite default author in any post or page by setting `author:` in front matter.
 - Post estimated reading time.
 - Post ordinal dates.

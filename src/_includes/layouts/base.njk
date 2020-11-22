@@ -20,6 +20,7 @@
   {% endif %}
 
   <title>{% if title %}{{ title }} &ndash; {% endif %}{{ site.title }}</title>
+  <meta name="author" content="{{ author or site.author }}">
   <meta name="description" content="{{ description }}">
   
   <!-- Open Graph protocol -->
@@ -29,7 +30,7 @@
     <meta property="og:type" content="website">
   {% endif %}
   <meta property="og:url" content="{{ canonicalUrl or absoluteUrl }}">
-  <meta property="og:title" content="{% if title %}{{ title }} &ndash; {% endif %}{{ site.title }}">
+  <meta property="og:title" content="{{ title }}">
   <meta property="og:description" content="{{ description }}">
   <meta property="og:site_name" itemprop="name" content="{{ site.title }}">
   <meta property="og:locale" content="{{ site.metaLocale }}">
@@ -40,11 +41,11 @@
 
   <!-- Twitter card -->
   <meta name="twitter:card" content="summary_large_image">
-  {% if site.author.twitterSite %}
-    <meta name="twitter:site" content="{{ site.author.twitterSite }}">
+  {% if site.twitterSite %}
+    <meta name="twitter:site" content="{{ site.twitterSite }}">
   {% endif %}
-  <meta name="twitter:creator" content="{{ site.author.twitterCreator }}">
-  <meta name="twitter:title" content="{% if title %}{{ title }} &ndash; {% endif %}{{ site.title }}">
+  <meta name="twitter:creator" content="{{ twitterCreator or site.twitterCreator }}">
+  <meta name="twitter:title" content="{{ title }}">
   <meta name="twitter:description" content="{{ description }}">
   {% if image %}
     <meta name="twitter:image" content="{{ image }}">

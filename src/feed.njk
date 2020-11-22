@@ -11,9 +11,9 @@ eleventyExcludeFromCollections: true
   <updated>{{ collections.posts | rssLastUpdatedDate }}</updated>
   <id>{{ site.feed.id }}</id>
   <author>
-    <name>{{ site.author.name }}</name>
-    {%- if site.author.email %}
-      <email>{{ site.author.email }}</email>
+    <name>{{ site.author }}</name>
+    {%- if site.email %}
+      <email>{{ site.email }}</email>
     {%- endif %}
   </author>
   {%- for post in collections.posts %}
