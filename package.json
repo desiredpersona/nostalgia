@@ -4,10 +4,10 @@
   "description": "A minimal Eleventy starter created from first principles thinking",
   "scripts": {
     "build": "ELEVENTY_ENV=production npx @11ty/eleventy",
-    "build-dev": "ELEVENTY_ENV=development npx @11ty/eleventy",
+    "build:dev": "ELEVENTY_ENV=development npx @11ty/eleventy",
     "serve": "ELEVENTY_ENV=development npx @11ty/eleventy --serve --watch",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "debug-performance": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
+    "debug:performance": "DEBUG=Eleventy:Benchmark* npx @11ty/eleventy"
   },
   "author": {
     "name": "Desired Persona",
