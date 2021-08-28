@@ -208,11 +208,13 @@ module.exports = function (config) {
 
     // https://www.npmjs.com/package/markdown-it-anchor
     .use(markdownItAnchor, {
-      level: [1, 2, 3, 4, 5, 6],
-      permalink: true,
-      permalinkClass: "al",
-      permalinkSymbol: "#",
-      permalinkBefore: false,
+      permalink: markdownItAnchor.permalink.ariaHidden({
+        placement: "after",
+        class: "al",
+        symbol: "#",
+        level: [1, 2, 3, 4],
+      }),
+      slugify: config.getFilter("slug"),
     })
 
     // https://www.npmjs.com/package/markdown-it-attrs
