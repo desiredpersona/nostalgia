@@ -1,6 +1,6 @@
-drafts/
+_drafts/
 node_modules/
-dist/
+_site/
 package-lock.json
 README.md
 .DS_Store
