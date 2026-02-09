@@ -1,0 +1,47 @@
+/* ==========================================================================
+   Layout
+   CSS Grid page structure
+   ========================================================================== */
+
+body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  gap: var(--space-xl) 0;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+  align-self: end;
+  padding-block: var(--space-md);
+}
+
+/* Centered layout on larger screens */
+@media (min-width: 720px) {
+  body {
+    grid-template-columns: 1fr min(var(--content-width), 100%) 1fr;
+    grid-template-areas:
+      ". header ."
+      ". main ."
+      ". footer .";
+    line-height: var(--line-height-relaxed);
+  }
+
+  header,
+  main,
+  footer {
+    grid-column: 2;
+  }
+}

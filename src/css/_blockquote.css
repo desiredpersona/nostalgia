@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Blockquotes
+   ========================================================================== */
+
+blockquote {
+  border-inline-start: 3px solid var(--color-text);
+  font-size: var(--font-size-lg);
+  font-style: italic;
+  margin-block: var(--space-xl);
+  padding-inline-start: var(--space-lg);
+}
+
+blockquote > footer {
+  font-style: normal;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-block-start: var(--space-md);
+}
+
+blockquote cite {
+  font-style: normal;
+}

@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Tags Component
+   ========================================================================== */
+
+.t {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: 0;
+  list-style: none;
+  margin-block: var(--space-2xl) var(--space-lg);
+}
+
+/* Override article > * + * spacing for tags */
+article > .t {
+  margin-block-start: var(--space-2xl);
+}
+
+.t li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.t a {
+  display: inline-block;
+  background-color: var(--color-bg-subtle);
+  border-radius: 2em;
+  padding: var(--space-xs) var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: background-color 0.15s ease;
+}
+
+.t a:hover {
+  background-color: var(--color-border);
+  color: var(--color-text);
+}

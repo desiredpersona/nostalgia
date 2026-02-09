@@ -1,0 +1,73 @@
+/* ==========================================================================
+   Typography
+   Headings, paragraphs, links, and content flow
+   ========================================================================== */
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: var(--line-height-tight);
+  font-weight: var(--font-weight-bold);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--font-size-2xl);
+  margin-block-end: var(--space-lg);
+}
+
+h2 {
+  font-size: var(--font-size-xl);
+  margin-block: var(--space-2xl) var(--space-md);
+}
+
+h3 {
+  font-size: var(--font-size-lg);
+  margin-block: var(--space-xl) var(--space-md);
+}
+
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-base);
+  margin-block: var(--space-lg) var(--space-sm);
+}
+
+/* Paragraphs */
+p {
+  text-wrap: pretty;
+}
+
+p + p {
+  margin-block-start: var(--space-md);
+}
+
+/* Article content flow */
+article > * + * {
+  margin-block-start: var(--space-md);
+}
+
+article > h2 + *,
+article > h3 + *,
+article > h4 + * {
+  margin-block-start: var(--space-sm);
+}
+
+/* Links */
+a {
+  color: var(--color-link);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--color-link-hover);
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}

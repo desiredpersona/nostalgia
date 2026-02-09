@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Design Tokens
+   CSS custom properties for typography, spacing, and colors
+   ========================================================================== */
+
+:root {
+  /* Typography Scale - fluid sizing with clamp() */
+  --font-size-sm: clamp(0.875rem, 0.8rem + 0.25vw, 1rem);
+  --font-size-base: clamp(1.0625rem, 0.95rem + 0.5vw, 1.25rem);
+  --font-size-lg: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --font-size-xl: clamp(1.5rem, 1.25rem + 1.25vw, 2rem);
+  --font-size-2xl: clamp(1.875rem, 1.5rem + 1.875vw, 2.75rem);
+
+  /* Line Heights */
+  --line-height-tight: 1.3;
+  --line-height-base: 1.75;
+  --line-height-relaxed: 1.85;
+
+  /* Font Families */
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 600;
+
+  /* Spacing Scale */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+
+  /* Layout */
+  --content-width: 65ch;
+  --content-padding: clamp(1rem, 5vw, 2rem);
+
+  /* Colors */
+  --color-text: #1d1d1f;
+  --color-text-muted: #6e6e73;
+  --color-bg: #ffffff;
+  --color-bg-subtle: #f5f5f7;
+  --color-border: #e5e5e5;
+  --color-link: #1d1d1f;
+  --color-link-hover: #0066cc;
+  --color-code-bg: #f3f3f3;
+  --color-highlight: #fff3cd;
+
+  /* Semantic Colors */
+  --color-del: #ffeef0;
+  --color-ins: #e6ffed;
+}

@@ -1,0 +1,39 @@
+/* ==========================================================================
+   Code & Preformatted Text
+   ========================================================================== */
+
+code,
+kbd,
+samp {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+}
+
+code {
+  background-color: var(--color-code-bg);
+  border-radius: 3px;
+  padding: 0.125em 0.375em;
+}
+
+/* Code blocks */
+pre {
+  background-color: var(--color-code-bg);
+  border-radius: 6px;
+  overflow-x: auto;
+  padding: var(--space-md);
+  margin-block: var(--space-lg);
+  max-width: 100%;
+}
+
+pre > code {
+  background: none;
+  padding: 0;
+  font-size: var(--font-size-sm);
+  line-height: 1.6;
+}
+
+kbd {
+  border: 1.5px solid var(--color-border);
+  border-radius: 4px;
+  padding: 0.125em 0.375em;
+}

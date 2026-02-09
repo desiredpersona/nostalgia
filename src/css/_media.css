@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Images & Media
+   ========================================================================== */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[width] {
+  width: auto;
+}
+
+img[width][height] {
+  height: auto;
+}
+
+img[src$=".svg"] {
+  width: 100%;
+  max-width: none;
+}
+
+/* Visual indicator for missing alt text */
+img:not([alt]) {
+  outline: 3px dashed var(--color-link-hover);
+}
+
+figure {
+  margin-block: var(--space-xl);
+}
+
+figcaption {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-block-start: var(--space-sm);
+}

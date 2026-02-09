@@ -1,0 +1,23 @@
+/* ==========================================================================
+   Text Formatting
+   ========================================================================== */
+
+del {
+  background-color: var(--color-del);
+  padding-inline: 2px;
+}
+
+ins {
+  background-color: var(--color-ins);
+  padding-inline: 2px;
+  text-decoration: none;
+}
+
+mark {
+  background-color: var(--color-highlight);
+  padding-inline: 2px;
+}
+
+small {
+  font-size: var(--font-size-sm);
+}

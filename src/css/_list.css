@@ -1,0 +1,19 @@
+/* ==========================================================================
+   Lists
+   ========================================================================== */
+
+ul,
+ol {
+    padding-left: var(--space-lg);
+}
+
+article :not(.t) > li + li,
+main > ul:not(.t) li + li,
+main > ol li + li {
+    margin-block-start: var(--space-sm);
+}
+
+li > ul,
+li > ol {
+    margin-block-start: var(--space-sm);
+}

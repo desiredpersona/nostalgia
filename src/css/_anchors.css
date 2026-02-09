@@ -1,0 +1,24 @@
+/* ==========================================================================
+   Anchor Links (markdown-it-anchor)
+   ========================================================================== */
+
+.al {
+  color: transparent;
+  text-decoration: none;
+  margin-inline-start: var(--space-sm);
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.al:hover {
+  color: var(--color-link-hover);
+}
+
+/* Show anchor on heading hover */
+h1:hover .al,
+h2:hover .al,
+h3:hover .al,
+h4:hover .al {
+  opacity: 1;
+  color: var(--color-text-muted);
+}
