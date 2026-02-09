@@ -1,5 +1,5 @@
 ---
-layout: archive
+layout: archive.njk
 title: Archive
 description: Time archive layout
 permalink: archive/index.html

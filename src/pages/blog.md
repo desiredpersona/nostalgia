@@ -1,5 +1,5 @@
 ---
-layout: blog
+layout: blog.njk
 title: Latest posts
 description: Time paginated blog layout
 permalink: blog/{% if pagination.pageNumber > 0 %}page-{{ pagination.pageNumber + 1 }}/{% endif %}index.html

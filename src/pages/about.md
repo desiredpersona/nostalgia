@@ -1,4 +1,5 @@
 ---
+layout: page.njk
 title: About
 description: A minimal eleventy starter
 permalink: about/index.html

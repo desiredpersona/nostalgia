@@ -1,9 +1,9 @@
 ---
-layout: page
+layout: page.njk
 eleventyComputed:
-  title: Tagged “{{ tag }}”
+  title: Tagged "{{ tag }}"
   description: Posts tagged with {{ tag }}
-permalink: /tags/{{ tag | slug }}/
+permalink: "/tags/{{ tag | slugify }}/"
 pagination:
   data: collections
   size: 1
@@ -17,7 +17,7 @@ pagination:
   addAllPagesToCollections: true
 ---
 
-{% set postList = collections[ tag ] %}
-{% include "partials/postList.njk" %}
+{% set postslist = collections[ tag ] %}
+{% include "partials/postslist.njk" %}
 
 <p>See <a href="{{ '/tags/' | url }}">all tags</a>.</p>

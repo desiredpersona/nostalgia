@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <!-- Meta robots -->
   {% if site.environment == "development" %}
     <!-- Disallow search engines in development -->
@@ -19,10 +19,10 @@
     {% endif %}
   {% endif %}
 
-  <title>{% if title %}{{ title }} &ndash; {% endif %}{{ site.title }}</title>
+  <title>{{ title or site.title }}</title>
   <meta name="author" content="{{ author or site.author }}">
   <meta name="description" content="{{ description }}">
-  
+
   <!-- Open Graph protocol -->
   {% if layout == "post" %}
     <meta property="og:type" content="blog">
@@ -58,20 +58,18 @@
   <link rel="canonical" href="{{ canonicalUrl or absoluteUrl }}"/>
 
   <!-- Favicons -->
-  <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+  <link rel="shortcut icon" href="/favicons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
 
   {% if site.googleAnalytics and site.environment == "production" %}
     <link rel="preconnect" href="//www.google-analytics.com">
   {% endif %}
 
-  <!-- CSS stylesheet -->
-  {% set css %}
-    {% include "css/nostalgia.css" %}
-  {% endset %}
-  <style>{{ css | cssMin | safe }}</style>
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/syntax.css">
 
   <!-- Feed -->
   <link rel="alternate" href="{{ site.feed.path | url }}" title="{{ site.title }}" type="application/atom+xml">
@@ -91,7 +89,5 @@
   </main>
 
   {% include "partials/footer.njk" %}
-
-  <script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
 </body>
 </html>

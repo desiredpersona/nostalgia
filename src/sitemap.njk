@@ -11,9 +11,9 @@ eleventyExcludeFromCollections: true
       <loc>{{ absoluteUrl }}</loc>
       <lastmod>
         {% if page.data.lastModified %}
-          {{ page.data.lastModified | rssDate }}
+          {{ page.data.lastModified | dateToRfc3339 }}
         {% else %}
-          {{ page.date | rssDate }}
+          {{ page.date | dateToRfc3339 }}
         {% endif %}
       </lastmod>
     </url>

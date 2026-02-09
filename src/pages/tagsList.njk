@@ -1,16 +1,14 @@
 ---
-layout: page
+layout: page.njk
 title: Tags
 description: My website tags
-permalink: /tags/
+permalink: "/tags/"
 ---
 
 <ul class="t">
   {% for tag in collections.tagList %}
     <li>
-      <a href="{{ tag | slug }}">{{ tag }}</a>
+      <a href="{{ tag | slugify }}">{{ tag }}</a>
     </li>
   {% endfor %}
 </ul>
-
-

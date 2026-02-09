@@ -12,8 +12,8 @@
 
   <h3>Page {{ pagination.pageNumber + 1 }} of {{ pagination.pages.length }}</h3>
 
-  {% set postList = posts %}
-  {% include "partials/postList.njk" %}
+  {% set postslist = posts %}
+  {% include "partials/postslist.njk" %}
 
   <div class="pp">
     {%- if pagination.href.previous -%}
